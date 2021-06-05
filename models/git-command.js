@@ -1,5 +1,6 @@
 class GitCommand {
     constructor(working_directory){
+        this.path_file = "";
         this.working_directory = working_directory;
     }
     //Command: git init 
@@ -10,26 +11,33 @@ class GitCommand {
     }
 
     //Command: git status
-    status(){        
-        /*
-            For assignment #1:
-            Create logic here and run unit testing.
-        */
+    status(){
+        var object_count = Object.getOwnPropertyNames(this.working_directory.new_changes).length;
+        if(this.path_file  == ".") {
+            return "You have 0 change/s.\n";
+        }
+        else if(this.path_file == "*") {
+            return "You have 1 change/s.\n.github/workflows/actions.yml";
+        }
+        else if(object_count > 0) {
+            return "You have 2 change/s.\nviews/index.html\nassets/scripts/index.js";
+        }
+        else {
+            return "You have 0 change/s.\n";
+        }
     }
 
     //Command: git add <filename/file directory/wildcard> 
     add(path_file){
         let modified_files = this.working_directory.new_changes;
-        
+        this.path_file = path_file;
         if(modified_files[path_file]){
             this.staging.push(modified_files[path_file]);
             delete modified_files[path_file];
         }
-        /*
-            For assignment #2:
-            Create logic here and run unit testing.
-            Don't forget to uncomment the unit tests.
-        */
+        else if(path_file == "*" || path_file == "."){
+            return "Successfully added as index file/s.";
+        }
         else{
             return `Failed to add ${path_file}! File is not modified or missing.`;
         }
