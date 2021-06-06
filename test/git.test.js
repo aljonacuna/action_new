@@ -69,7 +69,7 @@ describe("Testing GitCommand.add()", function(){
 
 
         expect(output_add).to.equal('Successfully added as index file/s.');
-        expect(output_status).to.equal('You have 0 change/\n');
+        expect(output_status).to.equal('You have 0 chane/\n');
     });
 
     it('Should success with path_file "*"', function(){
