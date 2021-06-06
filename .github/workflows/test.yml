@@ -2,7 +2,8 @@ name: Github Actions Example
 on:
   push:
     branches: 
-        - master 
+        - master
+	- develop
 jobs:
   build:
     name: Build simple project
