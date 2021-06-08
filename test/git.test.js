@@ -39,7 +39,7 @@ describe("Testing GitCommand.add()", function(){
         let path_file = "views/index.html";
         let output = git.add(path_file);
 
-        expect(output).to.equal('Successfully added as index file/s');
+        expect(output).to.equal('Successfully added as index file/s.');
     });
 
     it('Should failed with missing path_file "views/error404.html"', function(){
@@ -69,7 +69,7 @@ describe("Testing GitCommand.add()", function(){
 
 
         expect(output_add).to.equal('Successfully added as index file/s.');
-        expect(output_status).to.equal('You have 0 chagne/\n');
+        expect(output_status).to.equal('You have 0 change/s.\n');
     });
 
     it('Should success with path_file "*"', function(){
