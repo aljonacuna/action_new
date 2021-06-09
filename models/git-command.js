@@ -26,7 +26,7 @@ class GitCommand {
             return "You have 0 change/s.\n";
         }
     }
-
+    //updated
     //Command: git add <filename/file directory/wildcard> 
     add(path_file){
         let modified_files = this.working_directory.new_changes;
