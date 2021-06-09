@@ -83,7 +83,7 @@ describe("Testing GitCommand.add()", function(){
         let output_add = git.add("*");
         let output_status = git.status();
 
-        expect(output_add).to.equal('Successfully added as index file/');
+        expect(output_add).to.equal('Successfully added as index file/s.');
         expect(output_status).to.equal('You have 1 change/s.\n.github/workflows/actions.yml');
     });
 })
